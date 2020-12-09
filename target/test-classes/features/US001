@@ -1,0 +1,58 @@
+@US
+
+Feature: US002 Any field on the registration page should not be left blank
+
+  Background: All custumer registration tests common links
+    Given user is on "http://gmibank.com/" page
+    And user click on User button
+    And user clicks Registration tab
+
+    And click on SSN
+    Then user enters a invalid format of SSN number
+
+    And click on First Name
+    Then user enters a invalid First Name
+
+    And click on Last Name
+    Then user enters a invalid Last Name
+
+    And click on Address TextBox
+    Then user enters invalid Address
+
+    And click on Mobile Phone Number
+    Then user enters a invalid Mobil Phone Number
+
+    And click on Username
+    Then user enters invalid username
+
+
+    And click on Email
+    Then user enters invalid Email
+
+
+    And click on New password TextBox
+    Then user enters invalid New password
+
+
+  Scenario: US02TC09 Password strength level must be strong test
+    And Password strength level must be strong
+
+    And click on New password confirmation
+    Then user enters invalid New password confirmation
+
+  Scenario: US02TC011 New password confirmation Test
+    Then user clicks the Register button
+
+    And new click on SSN TextBox
+    And the user must type the character "<Tire>" - when entering a number into the current SSN TextBox
+    Then ssn the user should not see the text
+
+
+    And new click on Mobile Phone Number
+    And user must type the"<Tire>" character - when entering a number into the valid Mobile Phone Number TextBox
+    Then mobil the user should not see the text
+
+
+    And new click on Email
+    And the user is entering a valid Email TextBox Email Must use"<email charecter>" @  character and .com expression in TextBox
+    Then email the user should not see the
